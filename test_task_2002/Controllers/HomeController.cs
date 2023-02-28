@@ -48,7 +48,6 @@ namespace test_task_2002.Controllers
             }
 
             List<User> users = db.Users.ToList();
-            // устанавливаем начальный элемент, который позволит выбрать всех
             users.Insert(0, new User { Name = "All", Id = 0 });
 
             GamesListViewModel viewModel = new GamesListViewModel
