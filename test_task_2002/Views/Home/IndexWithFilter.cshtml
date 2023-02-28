@@ -1,0 +1,39 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model test_task_2002.Models.GamesListViewModel
+
+<form method="get">
+    <div>
+        <label>  Name of Game  :  </label>
+        <input asp-for="Name" />
+
+        <label>  User  : </label>
+        <select name="user" asp-items="Model.Users" ></select>
+
+        <input type="submit" value="filter"  />
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <th>Name of Game</th>
+        <th>CountOfPoints</th>
+        <th>User</th>
+        <th>Edit Game</th>
+        <th>Delete Game</th>
+    </tr>
+
+    @foreach (var item in Model.Games)
+    {
+        <tr>
+            <td>@item.GameName</td>
+            <td>@item.CountOfPoints</td>
+            <td>@item.User?.Name</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

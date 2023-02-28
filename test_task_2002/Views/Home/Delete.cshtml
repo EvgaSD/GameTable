@@ -1,0 +1,29 @@
+﻿@model test_task_2002.Models.Game
+@{
+    ViewBag.Title = "Delete User";
+}
+<h2>do you really want to uninstall this game?</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>
+            @Model.GameName
+        </dd>
+
+        <dt>Age</dt>
+        <dd>
+           @Model.CountOfPoints
+        </dd>
+        <dt>User</dt>
+        <dd>@Model.User.Name</dd>
+
+    </dl>
+
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Delete" />
+            </div>
+        </form>
+    </div>
+</div>

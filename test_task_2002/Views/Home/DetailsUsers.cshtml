@@ -1,0 +1,37 @@
+﻿@model test_task_2002.Models.User
+
+@{
+    ViewBag.Title = "DetailsUsers";
+}
+<h2>User: <i>@Model.Name</i></h2>
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>Status for User</dt>
+        <dd>@Model.Status</dd>
+
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>Name for Games</dt>
+        <dd>@Model.NickName</dd>
+
+
+    </dl>
+    <h3>All games for this user</h3>
+    <table class="table table-bordered">
+    @foreach (var game in Model.Games)
+    {
+       
+        
+        <tr>
+            <td>@game.GameName</td>
+            <td>
+                @game.CountOfPoints
+            </td>
+        </tr>
+        
+        
+    }
+    </table>
+</div>

@@ -1,0 +1,27 @@
+﻿@model test_task_2002.Models.Game
+@{
+    ViewBag.Title = "AddGame";
+}
+
+
+<form asp-action="Create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="GameName">Name</label><br />
+        <input type="text" asp-for="GameName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CountOfPoints">Count Of Points</label><br />
+        <input type="number" asp-for="CountOfPoints" class="form-control"/>
+     </div>
+    <div class="form-group">
+        <label asp-for="UserId" class="control-label">User</label>
+        <select asp-for="UserId" asp-items="ViewBag.Users" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-outline-success" />
+    </div>
+   
+</form>
+
+
+
