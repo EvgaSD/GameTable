@@ -9,6 +9,6 @@
 
        public string NickName { get; set; }      
 
-       public List<Game> Games { get; set; } = new(); // сотрудники компании
+       public List<Game> Games { get; set; } = new(); 
     }
 }
