@@ -11,6 +11,6 @@ namespace test_task_2002.Models
 
         public int UserId { get; set; }
 
-        public User? User { get; set; }  // компания пользователя
+        public User? User { get; set; } 
     }
 }
